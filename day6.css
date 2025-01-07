@@ -1,0 +1,57 @@
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    gap: 10em;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto); 
+
+    display: flex;
+    justify-content: space-between; 
+    background: blueviolet;
+}
+*/
+
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    gap: 25px;
+}
+
+.items {
+    width: 100px;
+    height: 100px;
+    outline: 2px solid black;
+    background: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px white;
+}
+
+body {
+    background: url("./images/52.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Shortcut */
+    background: url("./images/52.jpg") no-repeat center/cover;
+    opacity: 1;
+    /* value between 0 - 1 like 0.1, 0.2, 0.3...1 */
+}
+
+.item1 {
+    position: sticky;
+    bottom: 5px;
+    right: 5px;
+}
