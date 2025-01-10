@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1000px;
+            height: 100vh;
+            background: rgb(49, 128, 202);
+            border: 2px solid black;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(170, 43, 180);
+            border: 2px solid black;
+            transition: all 1s cubic-bezier(0.74, 0.83, 0.04, 1.3);
+            border-radius: 50%;
+            /* 
+                transition-timing-function,
+                transition-property,
+                transition-delay,
+                transiition-duration,
+            */
+
+            animation: uday 1s cubic-bezier(0.74, 0.83, 0.04, 1.3) 0s infinite alternate-reverse;
+        }
+
+        @keyframes uday {
+            /* from {
+                transform: translateY(-70%) translateX(50%) ;
+            }
+            
+            to {
+                transform: translateY(79%) translateX(-40%);
+            } */
+
+
+            /* 0% {
+                transform: translateY(-70%);
+            }
+
+            10% {
+                border-radius: 40px;
+                transform: translateX(40px);
+            }
+
+            100% {
+                border-radius: 0px;
+            } */
+        }
+
+        .loader {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .loader>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+        }
+
+        .loader>span div {
+            border-top: 3px solid white;
+            border-left: 3px solid white;
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            transform: rotate(360deg);
+            animation: loader 1s ease 0s infinite backwards;
+        }
+
+        @keyframes loader {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .cards-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            border: 2px solid tomato;
+            background: pink;
+            height: 100%;
+            gap: 12px;
+        }
+
+        .card {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            width: 100px;
+            height: 100px;
+            background: orangered;
+            border: 2px solid black;
+        }
+
+        .cards-container :nth-child(3) {
+            z-index: 1;
+        }
+
+        .cards-container :nth-child(2) {
+            z-index: 2;
+        }
+
+        .cards-container :nth-child(7) {
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="box">BOX</div> -->
+
+        <!-- <div class="loader">
+            <span>
+                <div></div>
+            </span>
+            <p>Loading...</p>
+        </div> -->
+
+        <div class="cards-container">
+            <div class="card">1</div>
+            <div class="card">2</div>
+            <div class="card">3</div>
+            <div class="card">4</div>
+            <div class="card">5</div>
+            <div class="card">6</div>
+            <div class="card">7</div>
+        </div>
+    </div>
+</body>
+</html>

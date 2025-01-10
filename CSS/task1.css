@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10vh;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background: cyan;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    font-size: x-large;
+    color: black;
+    text-decoration: none;
+}
+
+section {
+    height: 90vh;
+    overflow: hidden;
+    background: gainsboro;
+    display: flex;
+    /* justify-content: sap; */
+}
+
+.box1 {
+    width: 50%;
+    height: 100%;
+    padding: 12px;
+}
+
+.box2 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    padding: 12px 50px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+#home>.box1 {
+    background: url("../images/img1.jpeg")no-repeat center /cover;
+}
+
+#about>.box1 {
+    background: url("../images/img2.jpeg") no-repeat center/cover;
+}
+
+#contact>.box1 {
+    background: url("../images/img1.jpeg")no-repeat center /cover;
+}
+
+#services>.box1 {
+    background: url("../images/img2.jpeg") no-repeat center/cover;
+}
+
+#help>.box1 {
+    background: url("../images/img1.jpeg") no-repeat center/cover;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+}
