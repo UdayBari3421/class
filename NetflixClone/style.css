@@ -8,6 +8,10 @@
     display: none;
 }
 
+body {
+    background: black;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,16 +20,16 @@
 
 header {
     color: white;
-    /* width: 100vw; */
+    font-family: "Netflix Sans bold";
     height: 100vh;
 }
 
 nav {
     position: relative;
     flex-wrap: wrap;
-    z-index: 1;
+    z-index: 5;
     margin: auto;
-    width: 85%;
+    width: 75%;
     padding: 12px;
     height: 10vh;
 }
@@ -97,17 +101,19 @@ nav {
 }
 
 select {
+    min-width: 150px;
     padding-inline: 12px;
-    height: 100%;
-    border-radius: 5px;
+    padding: 12px;
+    outline: none;
+    border-radius: 10px;
     color: white;
     background: var(--transperent);
 }
 
 .btn {
-    height: 100%;
+    /* height: 100%; */
     color: white;
-    padding: 10px 2rem;
+    padding: 12px 2rem;
     border-radius: 5px;
     border: none;
     background: var(--red);
@@ -151,10 +157,142 @@ form {
 }
 
 .trending {
+    color: white;
     position: relative;
+}
+
+.trending-menus {
+    gap: 20px;
+}
+
+.trending-main {
+    width: 75%;
+    margin: auto;
+    padding: 20px 2.5rem;
     flex-wrap: wrap;
     z-index: 1;
-    gap: 15px;
-    width: 100%;
-    /* padding: 12px; */
+    gap: 25px;
 }
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.cards-container {
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+
+.trending-card {
+    border-radius: 8px;
+    width: 190px;
+    height: 260px;
+    transition: all ease 0.2s;
+}
+
+#card1 {
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    background: url(./images/card1.jpg) center center/cover;
+}
+
+#card2 {
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    background: url(./images/card2.jpg) center center/cover;
+}
+
+#card3 {
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    background: url(./images/card3.jpg) center center/cover;
+}
+
+#card4 {
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    background: url(./images/card1.jpg) center center/cover;
+}
+
+#card5 {
+    border-radius: 8px;
+    width: 80%;
+    height: 100%;
+    background: #000;
+    background: url(./images/card2.jpg) center center/cover;
+}
+
+.trending-card:hover {
+    transform: scale(1.1);
+}
+
+.more {
+    width: 75%;
+    margin: auto;
+    color: white;
+    gap: 20px;
+}
+
+.more-card {
+    align-items: end;
+    padding: 15px;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    background: rgb(25, 33, 70);
+    background: linear-gradient(138deg, rgba(25, 33, 70, 1) 42%, rgba(102, 8, 52, 1) 100%);
+}
+
+.more-card-body {
+    gap: 20px;
+}
+
+.gap {
+    gap: 25px;
+}
+
+.list {
+    width: 75%;
+    margin-inline: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: white;
+    gap: 30px;
+}
+
+.list :nth-child(2) {
+    gap: 12px;
+}
+
+.question {
+    background: #2d2d2d;
+    padding: 0.5rem 2.5rem;
+    font-size: 25px;
+}
+
+#form-box {
+    width: 100%;
+}
+
+#form-box>div {
+    padding: 10px;
+}
+
+#form-box>.btn {
+    height: 100%;
+    padding: 20px;
+}
+
+footer {
+    width: 75%;
+    margin: auto;
+    gap: 20px;
+    color: gray;
+}
+
+.footer-table {}
