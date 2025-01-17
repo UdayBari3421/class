@@ -295,4 +295,70 @@ footer {
     color: gray;
 }
 
-.footer-table {}
+@media only screen and (max-width: 624px) {
+    .flex {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content :first-child {
+        font-size: 20px;
+    }
+
+    .nav-btn-box {
+        display: none;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .hero {
+        align-self: flex-end;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center;
+    }
+
+    .trending-main,
+    .more,
+    .list,
+    footer {
+        text-align: center;
+    }
+
+    .trending-card {
+        justify-content: center;
+        align-items: center;
+    }
+
+    #card1,
+    #card2,
+    #card3,
+    #card4,
+    #card5 {
+        width: 100%;
+    }
+
+    .trending-menus select {
+        width: 100%;
+    }
+
+    .more h1 {
+        margin-left: 0 !important;
+        font-size: 22px;
+    }
+
+    .list h1 {
+        font-size: 20px;
+    }
+
+    .question {
+        font-size: 16px;
+        padding-inline: 5px;
+    }
+
+    .question :nth-child(2) {
+        display: none;
+    }
+}
