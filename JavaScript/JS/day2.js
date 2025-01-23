@@ -54,6 +54,7 @@
 // let arr3 = [4, 5, 6];
 
 // let arr4 = arr1.concat(arr3);
+
 // let nestedArray = [1, 2, 3, 4, 5, [44, 33, 22, 11, [7, 8, 9]]];
 
 // console.log(nestedArray);
@@ -66,12 +67,12 @@
 // console.log(str);
 // console.log(str.split(" ").join(" "));
 
-// console.log(arr.indexOf(1, 0));
+// console.log(arr.indexOf(3, "n"));
 
 // Object
 
 // let obj = {
-//   Roll: 1,
+//   Roll: 11,
 //   Name: "Uday",
 //   "Sur Name": "Bari",
 //   CollegePercentages: [7.8, 8.5, 9.3],
@@ -83,10 +84,11 @@
 //     return a + b;
 //   },
 // };
+// console.log(obj["Sur Name"]);
 
 // console.log(obj.CollegePercentages[0]);
 // console.log(obj.colleges.BCA);
-// console.log(obj.addTwoNumbers(5, 6));
+// console.log(obj.addTwoNumbers(4, 6));
 
 // functions
 
@@ -98,21 +100,39 @@
 // console.log(addTwoNumbers(4, 6));
 
 // Arrow Function This Comes in ES6 (ECMA SCRIPT JAVASCRIPT DEVLOPEMENT TEAM) VERSION 6
-// let addTwoNumbers = (a, b) => {
+// const addTwoNumbers = (a, b) => {
 //   return a + b;
 // };
-
 // console.log(addTwoNumbers(4, 6));
 
 // Anonymus Function
-let a = function (a, b) {
-  return a + b;
-};
+// let a = function (a, b) {
+//   return a + b;
+// };
 
-let mathematicalFunctions = (a, b) => {
-  let obj = {
-    add: (a, b) => a + b,
-    multiply: (a, b) => a * b,
-    divide: (a, b) => a * b,
-  };
-};
+// let mathematicalFunctions = (a, b) => {
+//   let obj = {
+//     add: (a, b) => a + b,
+//     multiply: (a, b) => a * b,
+//     divide: (a, b) => a * b,
+//   };
+// };
+
+// IIFE( Immediately Invoked Function Expression)
+// (function () {
+//   console.log("IIFE");
+// })();
+
+let arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// for (let i = 0; i < arr5.length; i++) {
+//   console.log(arr5[i] + "index : " + i);
+// }
+
+let iterate = arr5.map((item) => item);
+
+let filteredElements = arr5.filter((elem) => elem > 5);
+
+let sumofAllElements = arr5.reduce((prev, curr) => prev * curr);
+
+console.log(sumofAllElements);
