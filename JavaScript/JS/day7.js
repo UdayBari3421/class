@@ -85,3 +85,6 @@ form.addEventListener("submit", (e) => {
   } else {
   }
 });
+
+// TODO : PASSWORD VALIDATION
+// TODO : TRY CHECKBOX OR RADIOBUTTON (e.current.value)
