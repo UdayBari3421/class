@@ -64,7 +64,8 @@ let data = [
   },
   {
     name: "Fried Chicken",
-    imageSrc: "https://picsum.photos/id/229/400/300",
+    imageSrc:
+      "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NTU3MjJ8MHwxfHNlYXJjaHwxfHxGcmllZCUyMENoaWNrZW58ZW58MHx8fHwxNzM4Njg3OTQyfDA&ixlib=rb-4.0.3&q=80&w=1080",
     time: "55 min",
     type: "non-veg",
     isLiked: false,
@@ -134,3 +135,88 @@ let data = [
     rating: 4.9,
   },
 ];
+
+/*<div class="card">
+    <img
+        src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NTU3MjJ8MHwxfHNlYXJjaHw2fHxwYW5lZXJ8ZW58MHx8fHwxNzM4NjU2MDY3fDA&ixlib=rb-4.0.3&q=80&w=1080">
+    <div class="card-text">
+        <p>veg</p>
+        <div class="sb">
+            <p>Russian Salad</p>
+            <p class="sb">
+                <img src="./assets/images/Star.svg" alt="">
+                4.3
+            </p>
+        </div>
+        <div class="sb">
+            <h3 class="time">40 min</h3>
+            <span class="sb">
+                <img src="./assets/images/like.svg" alt="" />
+                <img src="./assets/images/comments.svg" alt="">
+            </span>
+        </div>
+    </div>
+</div>*/
+const cardContainer = document.getElementById("card-container");
+const btnContainer = document.querySelectorAll(".btn-container button");
+const search = document.getElementById("search");
+
+btnContainer[0].addEventListener("click", () => {
+  cardContainer.innerHTML = "";
+  displayCards(data);
+});
+
+btnContainer[1].addEventListener("click", () => {
+  let filteredData = data.filter((dish) => dish.type === "veg");
+  cardContainer.innerHTML = "";
+  displayCards(filteredData);
+});
+
+btnContainer[2].addEventListener("click", () => {
+  let filteredData = data.filter((dish) => dish.type === "non-veg");
+  cardContainer.innerHTML = "";
+  displayCards(filteredData);
+});
+
+search.addEventListener("input", (e) => {
+  let searchTerm = e.target.value.toLowerCase();
+  console.log(searchTerm);
+
+  // add or condidion using :-   || item.time.toLowerCase().includes(searchTerm); to find using time also
+  let newData = data.filter((item) => item.name.toLowerCase().includes(searchTerm));
+
+  cardContainer.innerHTML = "";
+  displayCards(newData);
+});
+
+function displayCards(filteredData) {
+  filteredData.map((item) => {
+    let card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img
+        height="200"
+        src="${item.imageSrc}">
+      <div class="card-text">
+        <p>${item.type}</p>
+        <div class="sb">
+            <h3>${item.name}</h3>
+            <p class="sb">
+                <img src="./assets/images/Star.svg" alt="">
+                ${item.rating}
+            </p>
+        </div>
+        <div class="sb">
+            <h3 class="time" style="color:#DC582A;">${item.time}</h3>
+            <span class="sb">
+                <img src="./assets/images/like.svg" alt="" />
+                <img src="./assets/images/comments.svg" alt="">
+            </span>
+        </div>
+      </div>`;
+
+    cardContainer.append(card);
+  });
+}
+
+window.onload = displayCards(data);
