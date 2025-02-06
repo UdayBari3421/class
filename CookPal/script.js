@@ -201,9 +201,9 @@ function displayCards(filteredData) {
         <p>${item.type}</p>
         <div class="sb">
             <h3>${item.name}</h3>
-            <p class="sb">
+            <p class="sb nameline">
                 <img src="./assets/images/Star.svg" alt="">
-                ${item.rating}
+                <p class="rating">${parseFloat(item.rating).toFixed(1)}</p>
             </p>
         </div>
         <div class="sb">
@@ -218,5 +218,36 @@ function displayCards(filteredData) {
     cardContainer.append(card);
   });
 }
+
+function onCheckBoxChange() {
+  let cardsRatings = document.querySelectorAll(".rating");
+
+  cardsRatings.forEach((rating) => {
+    let card = rating.parentElement.parentElement.parentElement;
+    let parsedRating = parseFloat(rating.textContent);
+
+    if (AboveCheckBox.checked && BelowCheckBox.checked) {
+      card.style.display = "flex";
+    } else if (AboveCheckBox.checked && !BelowCheckBox.checked) {
+      if (parsedRating <= 4.0) card.style.display = "none";
+      else {
+        card.style.display = "flex";
+      }
+    } else if (!AboveCheckBox.checked && BelowCheckBox.checked) {
+      if (parsedRating >= 4.0) card.style.display = "none";
+      else {
+        card.style.display = "flex";
+      }
+    } else {
+      card.style.display = "flex";
+    }
+  });
+}
+
+const AboveCheckBox = document.getElementById("above4");
+const BelowCheckBox = document.getElementById("below4");
+
+AboveCheckBox.addEventListener("change", onCheckBoxChange);
+BelowCheckBox.addEventListener("change", onCheckBoxChange);
 
 window.onload = displayCards(data);
