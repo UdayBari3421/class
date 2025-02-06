@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let root = document.getElementById("root");
+
+        let start = document.getElementById("start");
+        let stop = document.getElementById("stop");
+
+        // function callBackFunction(str) {
+        //   console.log(str + "Mai Exceute hua");
+        // }
+
+        // Perform a perticular task after the delay of time (Executes only One time)
+        // setTimeout(callBackFunction, 2000, "Hello");
+
+        // Perform a perticular task simultinusly the delay of time (Executes continuesly infinite times)
+        // setInterval(callBackFunction, 1000, "Hello");
+
+        let timer;
+
+        function startTime(time) {
+            //   timer = setInterval(() => {
+            //     console.log(time);
+            //     time++;
+            //   }, 1000);
+
+            timer = setTimeout(() => {
+                console.log("HELLO EXECUTED");
+            }, 1000);
+        }
+
+        function stopTime() {
+            //   clearInterval(timer);
+            clearTimeout(timer);
+        }
+
+        start.addEventListener("click", () => {
+            //   startTime(1);
+            startTime();
+        });
+
+        stop.addEventListener("click", stopTime);
+
+    </script>
+</head>
+<body>
+    <div id="root">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script src="JS/day8.js"></script>
+</body>
+</html>

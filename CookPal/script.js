@@ -203,7 +203,9 @@ function displayCards(filteredData) {
             <h3>${item.name}</h3>
             <p class="sb nameline">
                 <img src="./assets/images/Star.svg" alt="">
-                <p class="rating">${parseFloat(item.rating).toFixed(1)}</p>
+                <p class="rating">
+                  ${parseFloat(item.rating).toFixed(1)}
+                </p>
             </p>
         </div>
         <div class="sb">
