@@ -9,6 +9,8 @@
 
 // console.log(data);
 
+// CallBack Hell -> for this we use the asyn await and promises
+
 // setTimeout(() => {
 //   setTimeout(() => {
 //     setTimeout(() => {
