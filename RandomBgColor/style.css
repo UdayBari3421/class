@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* body {
+    transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+} */
