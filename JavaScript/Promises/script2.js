@@ -77,23 +77,69 @@
 // console.log(obj2);
 
 // DEEP COPY USING JSON
-let obj = {
-  name: "Lenovo",
-  processor: "intel i9",
-  price: 80000,
-  spesifications: {
-    processor: {
-      Cpu: "8core",
-      Gpu: "RTX5600",
-    },
-  },
-};
+// let obj = {
+//   name: "Lenovo",
+//   processor: "intel i9",
+//   price: 80000,
+//   spesifications: {
+//     processor: {
+//       Cpu: "8core",
+//       Gpu: "RTX5600",
+//     },
+//   },
+// };
 
-let obj2 = JSON.stringify(obj);
-obj2 = JSON.parse(obj2);
+// let obj2 = JSON.stringify(obj);
+// obj2 = JSON.parse(obj2);
 
-obj2.name = "ACER";
-obj2.spesifications.processor.Gpu = "NVDIA";
+// obj2.name = "ACER";
+// obj2.spesifications.processor.Gpu = "NVDIA";
 
-console.log(obj);
-console.log(obj2);
+// console.log(obj);
+// console.log(obj2);
+
+// Deep Copy using Recursion
+// let obj = {
+//   name: "Lenovo",
+//   processor: "intel i9",
+//   price: 80000,
+//   spesifications: {
+//     processor: {
+//       Cpu: "8core",
+//       Gpu: "RTX5600",
+//     },
+//   },
+// };
+
+// console.log(Object.keys(obj));
+
+function makeDeepCopy(obj) {
+  if (typeof obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  let copyValue = Array.isArray(obj) ? [] : {};
+  let keys = Object.keys(obj);
+
+  for (let i = 0; i < keys.length; i++) {
+    copyValue[keys[i]] = makeDeepCopy(obj[keys[i]]);
+  }
+
+  return copyValue;
+}
+
+// let obj2 = makeDeepCopy(obj);
+
+// obj2.spesifications.processor.Gpu = "NVDIA";
+// obj2.spesifications.processor.Cpu = "4core";
+// obj2.name = "ACER";
+
+// console.log(obj);
+// console.log(obj2);
+
+let arr = [1, 2, 3, 4, 5, [12, 45, 55, [88, 99, 22]]];
+
+let arr2 = makeDeepCopy(arr);
+
+console.log(arr);
+console.log(arr2);
